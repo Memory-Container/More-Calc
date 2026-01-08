@@ -46,8 +46,10 @@ function mathOperation(op) {
             break;
         case "CE":
             displayToken.splice(displayToken.length - 1, 1)
+            token.splice(token.length - 1, 1)
             inputString = displayToken.join("")
             console.log(inputString)
+            current--
             updateInput()
             break;
         case "⇐":
@@ -60,8 +62,8 @@ function mathOperation(op) {
             if (token[current] != "") {
                 token[current] = token[current].slice(0, -1)
                 displayToken[current] = displayToken[current].slice(0, -1)
-                console.log(displayToken[current])
-                if (display[current] == "") {
+                if (displayToken[current] == "") {
+                    console.log(1)
                     displayToken.splice(displayToken.length - 1, 1)
                     token.splice(token.length - 1, 1)
                     current--
